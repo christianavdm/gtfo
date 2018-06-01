@@ -32,11 +32,16 @@ module Gtfo
       end
     end
     
-    def start 
+    def self.start 
       puts "time to gtfo"
       puts "to go to a randomly assigned destination, type gtfo"
       puts "to see the top 5 travel destinations, type top" 
     end
+    
+    def self.top
+      self.all[0..4].each.with_index(1) {|d, i| puts "#{i}. #{d.name}"}
+    end
+    
     binding.pry
   end
 end
