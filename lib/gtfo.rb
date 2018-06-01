@@ -39,7 +39,22 @@ module Gtfo
     end
     
     def self.top
+      puts "top 5 destinations"
       self.all[0..4].each.with_index(1) {|d, i| puts "#{i}. #{d.name}"}
+    end
+    
+    def navigation
+      input = gets.strip
+      if input.downcase == "next" 
+        
+      elsif input.downcase == "last"
+        puts "to see the next 5, type next"
+        puts "to see the last 5, type last"
+      else 
+        puts "I didn't understand that."
+        puts "to see the next 5, type next"
+        puts "to see the last 5, type last"
+      end
     end
     
     binding.pry
