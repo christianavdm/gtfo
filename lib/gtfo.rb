@@ -46,15 +46,19 @@ module Gtfo
     def navigation
       input = gets.strip
       if input.downcase == "next" 
-        
+        self.menu
       elsif input.downcase == "last"
-        puts "to see the next 5, type next"
-        puts "to see the last 5, type last"
+        self.menu
       else 
         puts "I didn't understand that."
-        puts "to see the next 5, type next"
-        puts "to see the last 5, type last"
+        self.menu
       end
+    end
+    
+    def menu 
+      puts "to see the next 5, type next"
+      puts "to see the last 5, type last"
+      puts "to go to a randomly assigned destination, type gtfo"
     end
     
     binding.pry
