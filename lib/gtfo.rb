@@ -4,7 +4,6 @@ require 'open-uri'
 require 'pry'
 
 module Gtfo
-
   class Destination 
     attr_accessor :name, :description
     
@@ -31,6 +30,12 @@ module Gtfo
           Destination.all.delete(new_destination)
         end
       end
+    end
+    
+    def start 
+      puts "time to gtfo"
+      puts "to go to a randomly assigned destination, type gtfo"
+      puts "to see the top 5 travel destinations, type top" 
     end
     binding.pry
   end
