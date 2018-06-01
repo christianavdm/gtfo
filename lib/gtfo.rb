@@ -8,6 +8,7 @@ module Gtfo
     attr_accessor :name, :description
     
     @@all = []  
+    @@navigation = 0
     
     def initialize 
       @@all << self
@@ -43,22 +44,36 @@ module Gtfo
       self.all[0..4].each.with_index(1) {|d, i| puts "#{i}. #{d.name}"}
     end
     
-    def navigation
+    def self.navigation
       input = gets.strip
       if input.downcase == "next" 
-        self.menu
+        self.next 
+        self.menu 
+        self.navigation
       elsif input.downcase == "last"
         self.menu
+        self.navigation
+      elsif input.downcase == "gtfo"
+        self.menu 
+        self.navigation 
+      elsif input.downcase == "exit" 
+        exit
       else 
         puts "I didn't understand that."
         self.menu
+        self.navigation
       end
     end
     
-    def menu 
+    def self.menu 
       puts "to see the next 5, type next"
       puts "to see the last 5, type last"
       puts "to go to a randomly assigned destination, type gtfo"
+      puts "or else type exit"
+    end
+    
+    def self.next 
+      
     end
     
     binding.pry
