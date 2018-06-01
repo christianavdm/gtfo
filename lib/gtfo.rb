@@ -41,17 +41,18 @@ module Gtfo
       puts "time to gtfo"
       puts "to go to a randomly assigned destination, type gtfo"
       puts "to see the top 5 travel destinations, type top" 
+      self.destinations_from_page
     end
     
     def self.start
       input = gets.strip
       if input.downcase == "next" 
-        @@navigation += 5 unless @@navigation <= 0 
+        @@navigation += 5 unless @@navigation >= 44 
         self.print
         puts "for menu options, type ?"
         self.start
       elsif input.downcase == "back"
-        @@navigation -= 5 unless @@navigation >= 45
+        @@navigation -= 5 unless @@navigation <= 0
         self.print 
         puts "for menu options, type ?"
         self.start
