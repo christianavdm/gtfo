@@ -22,9 +22,16 @@ module Gtfo
   class Destination 
     attr_accessor :name, :description
     
-    @@all = []
+    @@all = []  
     
-
+    def initialize 
+      @@all << self
+    end
+    
+    def self.all 
+      @@all 
+    end
+    
   end
 end
 
