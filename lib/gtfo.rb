@@ -37,7 +37,7 @@ module Gtfo
       end
     end
     
-    def self.start 
+    def self.first 
       puts "time to gtfo"
       puts "to go to a randomly assigned destination, type gtfo"
       puts "to see the top 5 travel destinations, type top" 
@@ -46,13 +46,13 @@ module Gtfo
     def self.start
       input = gets.strip
       if input.downcase == "next" 
-        self.next 
-        @@navigation += 5 unless @@navigation <= 0
+        @@navigation += 5 unless @@navigation <= 0 
+        self.print
         puts "for menu options, type ?"
         self.start
       elsif input.downcase == "back"
-        self.last 
         @@navigation -= 5 unless @@navigation >= 45
+        self.print 
         puts "for menu options, type ?"
         self.start
       elsif input.downcase == "gtfo"
@@ -76,13 +76,8 @@ module Gtfo
       puts "or else type exit" 
     end
     
-    def self.next
-      puts "top 5 destinations"
-      self.all[@@navigation..@@navigation + 5].each.with_index(@@navigation + 1) {|d, i| puts "#{i}. #{d.name}"}
-    end
-    
-    def self.last 
-      
+    def self.print
+      self.all[@@navigation..@@navigation + 4].each.with_index(@@navigation + 1) {|d, i| puts "#{i}. #{d.name}"}
     end
     
     binding.pry
