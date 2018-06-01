@@ -18,6 +18,10 @@ module Gtfo
       @@all 
     end
     
+    def self.navigation 
+      @@navigation 
+    end
+    
     def self.destinations_from_page
       doc = Nokogiri::HTML(open("http://www.travelandleisure.com/trip-ideas/best-places-to-travel-in-2018"))
       
@@ -44,32 +48,34 @@ module Gtfo
       self.all[0..4].each.with_index(1) {|d, i| puts "#{i}. #{d.name}"}
     end
     
-    def self.navigation
+    def self.start
       input = gets.strip
       if input.downcase == "next" 
         self.next 
-        self.menu 
-        self.navigation
+        puts "for menu options, type ?"
+        self.start
       elsif input.downcase == "last"
-        self.menu
-        self.navigation
+        puts "for menu options, type ?"
+        self.start
       elsif input.downcase == "gtfo"
-        self.menu 
-        self.navigation 
+        puts "for menu options, type ?"
+        self.start
       elsif input.downcase == "exit" 
         exit
+      elsif input == "?"
+        self.menu
       else 
         puts "I didn't understand that."
         self.menu
-        self.navigation
+        self.start
       end
     end
     
     def self.menu 
-      puts "to see the next 5, type next"
-      puts "to see the last 5, type last"
+      puts "to see the next 5 destinations, type next"
+      puts "to see the last 5 destinations, type last"
       puts "to go to a randomly assigned destination, type gtfo"
-      puts "or else type exit"
+      puts "or else type exit" 
     end
     
     def self.next 
