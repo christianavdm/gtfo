@@ -1,7 +1,6 @@
 require "gtfo/version"
 require 'nokogiri'
 require 'open-uri'
-require 'openssl'
 require 'pry'
 
 module Gtfo
