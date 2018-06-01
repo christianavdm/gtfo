@@ -27,9 +27,13 @@ module Gtfo
         new_destination.description = destination.css("p").text
         if new_destination.name == "The 50 Best Places to Travel in 2018"
           Destination.all.delete(new_destination)
-          binding.pry
+        elsif new_destination.name == ""
+          Destination.all.delete(new_destination)
+        end
       end
     end
+    binding.pry
   end
 end
+
 
