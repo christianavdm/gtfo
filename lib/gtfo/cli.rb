@@ -92,17 +92,19 @@ class Gtfo::CLI
   end
   
   def menu 
+    puts "*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *"
+    puts "  gtfo => go to a randomly assigned destination"
+    puts "to go to the top 5 destinations, type go"
     puts "for more information on a destination, type the destination number"
     puts "to see the next 5 destinations, type next"
     puts "to see the previous 5 destinations, type back"
-    puts "to go to a randomly assigned destination, type gtfo"
-    puts "to go to the top 5 destinations, type go"
     puts "or else type exit" 
+    puts "* * * * * * * * * * * * * * * * * * * * * * * * * *"
   end
   
   def print
     puts " "
-    puts "*********** Now Boarding ***********"
+    puts "* * * * * Now Boarding * * * * * "
     puts " "
     Gtfo::Destination.all[@@navigation..@@navigation + 4].each.with_index(@@navigation + 1) {|d, i| puts "  #{i}. #{d.name}"}
     puts " "
@@ -127,12 +129,12 @@ class Gtfo::CLI
   def print_details(destination)
     puts ""
     puts ""
-    puts "<<>><<>><<>><<>><<>> #{destination.name} <<>><<>><<>><<>><<>>"
+    puts "********* #{destination.name} *********"
     puts ""
     puts ""
     puts destination.description
     puts ""
-    puts "<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>"
+    puts "*************************"
     puts ""
     puts "for menu options, type ?"
     puts ""
