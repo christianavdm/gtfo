@@ -2,4 +2,4 @@
 
 require_relative '../lib/gtfo'
 
-gtfo::CLI.new.call
+Gtfo::CLI.new.call
