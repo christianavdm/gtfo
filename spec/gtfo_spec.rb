@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 RSpec.describe Gtfo do
   it "has a version number" do
     expect(Gtfo::VERSION).not_to be nil
