@@ -55,37 +55,30 @@ class Gtfo::CLI
       @@navigation = 0 
       print
       start
-      return nil
     elsif @input.downcase == "next" 
       @@navigation += 5 unless @@navigation >= 44
       print
       start
-      return nil
     elsif @input.downcase == "back"
       @@navigation -= 5 unless @@navigation <= 0
       print 
       start
-      return nil
     elsif @input.downcase == "gtfo"
       gtfo
       start
-      return nil
     elsif @input.to_i > 0 && @input.to_i < 51
       destination_details
       start
-      return nil
     elsif @input.downcase == "exit" 
       bon_voyage
     elsif @input == "?"
       menu
       start
-      return nil
     else 
       puts ""
       puts "I didn't understand that."
       menu
       start
-      return nil
     end
   end
   
