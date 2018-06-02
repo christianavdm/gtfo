@@ -84,6 +84,7 @@ class Gtfo::CLI
       start
       return nil
     else 
+      puts ""
       puts "I didn't understand that."
       menu
       start
@@ -151,11 +152,11 @@ class Gtfo::CLI
     puts " "
     puts " "
     puts "         ,====,,\'\'\'\',,,           "
-    puts "  _______||__||_______ \'\'\',      ____________________ "
-    puts " | ___|_|_____ | |    |    ;   /\'                    | "
-    puts " | |HONG KONG| | |    |   ;   / o    Bon Voyage!     | "
-    puts " |    | |      |_|___ |    \'\'\'\\                      | "
-    puts " | ___|_|_____ ||USA| |       \`\\.____________________| "
+    puts "  _______||__||_______ \'\'\',     _________________ "
+    puts " | ___|_|_____ | |    |    ;   /                 | "
+    puts " | |HONG KONG| | |    |   ;   / o  Bon Voyage!   | "
+    puts " |    | |      |_|___ |    \'\'\'\\                  | "
+    puts " | ___|_|_____ ||USA| |       \`\\_________________| "
     puts " | |SINGAPORE| | |    |         "
     puts " |____|_|______|_|____| "
     puts " "
