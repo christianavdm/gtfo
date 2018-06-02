@@ -25,5 +25,6 @@ class Gtfo::Destination
       end
     end
   end
-  
 end
+
+

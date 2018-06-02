@@ -1,10 +1,10 @@
 class Gtfo::CLI 
   
+  @@navigation = 0 
+  
   def initialize 
     @input = nil
   end
-  
-  @@navigation = 0
   
   def self.navigation 
     @@navigation 
