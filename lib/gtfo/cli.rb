@@ -77,8 +77,7 @@ class Gtfo::CLI
       start
       return nil
     elsif @input.downcase == "exit" 
-      puts "Bon voyage!"
-      exit
+      bon_voyage
     elsif @input == "?"
       menu
       start
@@ -120,6 +119,22 @@ class Gtfo::CLI
     puts destination.name 
     puts destination.description
     puts "for menu options, type ?"
+  end
+  
+  def bon_voyage 
+    puts " "
+    puts " "
+    puts "         ,====,,\'\'\'\',,,           "
+    puts "  _______||__||_______ \'\'\',      ____________________ "
+    puts " | ___|_|_____ | |    |    ;   /\'                    | "
+    puts " | |HONG KONG| | |    |   ;   / o    Bon Voyage!     | "
+    puts " |    | |      |_|___ |    \'\'\'\\                      | "
+    puts " | ___|_|_____ ||USA| |       \`\\.____________________| "
+    puts " | |SINGAPORE| | |    |         "
+    puts " |____|_|______|_|____| "
+    puts " "
+    puts " "     
+    exit
   end
   
 end
