@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'Christiana Vandermale'"]
   spec.email         = ["'christianavdm@gmail.com'"]
 
-  spec.summary       = %q{Write a short summary, because RubyGems}
-  spec.description   = %q{Short description}
+  spec.summary       = %q{gtfo of town to these beautiful destinations}
+  spec.description   = %q{For when you want to get out of town, but you do not know where to go. Explore the top 50 destinations of the year, or else get randomly assigned to one.}
   spec.homepage      = "https://github.com/christianavdm/gtfo"
   spec.license       = "MIT"
 
