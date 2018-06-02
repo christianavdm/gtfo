@@ -47,6 +47,7 @@ class Gtfo::CLI
     puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     puts "       to see the top 5 travel destinations, type go" 
     puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    puts " "
     start
   end
   
@@ -100,25 +101,39 @@ class Gtfo::CLI
   end
   
   def print
-    Gtfo::Destination.all[@@navigation..@@navigation + 4].each.with_index(@@navigation + 1) {|d, i| puts "#{i}. #{d.name}"}
+    puts " "
+    puts "*********** Now Boarding ***********"
+    puts " "
+    Gtfo::Destination.all[@@navigation..@@navigation + 4].each.with_index(@@navigation + 1) {|d, i| puts "  #{i}. #{d.name}"}
+    puts " "
+    puts " "
     puts "for menu options, type ?"
+    puts ""
   end
   
   def destination_details 
     index = @input.to_i - 1 
     destination = Gtfo::Destination.all[index]
+    puts ""
     puts destination.name 
     puts destination.description
+    puts ""
+    puts ""
     puts "for menu options, type ?"
+    puts ""
   end
   
   def gtfo 
     r = Random.new 
     index = r.rand(0..49)
     destination = Gtfo::Destination.all[index]
+    puts ""
     puts destination.name 
     puts destination.description
+    puts ""
+    puts ""
     puts "for menu options, type ?"
+    puts ""
   end
   
   def bon_voyage 
