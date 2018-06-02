@@ -15,6 +15,34 @@ class Gtfo::CLI
   
   def call 
     puts "time to gtfo"
+    
+    puts  "              _  _"
+    puts  "             ( `   )_"
+    puts  "            (    )    `)"
+    puts  "          (_   (_ .  _) _)"
+    puts  "                                         _"
+    puts  "                                        (  )"
+    puts  "         _ .                         ( `  ) . )"
+    puts  "       (  _ )_                      (_, _(  ,_)_)"
+    puts  "     (_  _(_ ,)"
+    puts  "                                                            |"
+    puts  "              _  _                                        \ _ /"
+    puts  "             ( `   )_                                   -= (_) =-"
+    puts  "            (    )    `)                                  /   \ "
+    puts  "          (_   (_ .  _) _)                                  |"
+    puts " "
+    puts  "                                     _"
+    puts  "                                   -=\`\ "
+    puts  "                               |\ ____\_\__"
+    puts  "                             -=\c`""""""" "`)"
+    puts  "                                `~~~~~/ /~~` "
+    puts  "                                  -==/ / "
+    puts  "                                    '-'                 _ "
+    puts  "                                                       (  )"
+    puts  "                     _, _ .                         ( `  ) . )"
+    puts  "                    ( (  _ )_                      (_, _(  ,_)_)"
+    
+    
     puts "to go to a randomly assigned destination, type gtfo"
     puts "to see the top 5 travel destinations, type go" 
     start
