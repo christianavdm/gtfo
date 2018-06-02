@@ -32,7 +32,7 @@ class Gtfo::Destination
     end
   end
   
-  def self.first 
+  def self.call 
     puts "time to gtfo"
     puts "to go to a randomly assigned destination, type gtfo"
     puts "to see the top 5 travel destinations, type go" 
