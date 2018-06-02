@@ -116,6 +116,7 @@ class Gtfo::CLI
     destination = Gtfo::Destination.all[index]
     puts ""
     puts destination.name 
+    puts ""
     puts destination.description
     puts ""
     puts ""
@@ -129,6 +130,7 @@ class Gtfo::CLI
     destination = Gtfo::Destination.all[index]
     puts ""
     puts destination.name 
+    puts ""
     puts destination.description
     puts ""
     puts ""
