@@ -1,6 +1,3 @@
-module Gtfo 
-end
-
 class Gtfo::CLI 
   
   @@navigation = 0 

@@ -1,6 +1,3 @@
-module Gtfo 
-end
-
 class Gtfo::Destination 
   attr_accessor :name, :description
   
