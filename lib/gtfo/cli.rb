@@ -47,6 +47,7 @@ class Gtfo::CLI
       start
       return nil
     elsif @input.downcase == "exit" 
+      puts "Bon voyage!"
       exit
     elsif @input == "?"
       menu
