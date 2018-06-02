@@ -64,6 +64,7 @@ module Gtfo
         self.start
         return nil
       elsif @input.downcase == "gtfo"
+        self.gtfo
         self.start
         return nil
       elsif @input.to_i > 0 && @input.to_i < 51
