@@ -6,5 +6,5 @@ require_relative 'gtfo/cli'
 require_relative 'gtfo/destination'
 require_relative 'gtfo/version'
 
-module Gtfo 
+module Gtfo
 end

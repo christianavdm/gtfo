@@ -1,3 +1,6 @@
+module Gtfo 
+end
+
 class Gtfo::CLI 
   
   @@navigation = 0 
@@ -10,54 +13,54 @@ class Gtfo::CLI
     @@navigation 
   end
   
-  def self.call 
+  def call 
     puts "time to gtfo"
     puts "to go to a randomly assigned destination, type gtfo"
     puts "to see the top 5 travel destinations, type go" 
-    self.destinations_from_page
-    self.start
+    start
   end
   
-  def self.start
+  def start
+    Gtfo::Destination.new.destinations_from_page
     @input = gets.strip
     if @input.downcase == "go"
       @@navigation = 0 
-      self.print
-      self.start
+      print
+      start
       return nil
     elsif @input.downcase == "next" 
       @@navigation += 5 unless @@navigation >= 44
-      self.print
-      self.start
+      print
+      start
       return nil
     elsif @input.downcase == "back"
       @@navigation -= 5 unless @@navigation <= 0
-      self.print 
-      self.start
+      print 
+      start
       return nil
     elsif @input.downcase == "gtfo"
-      self.gtfo
-      self.start
+      gtfo
+      start
       return nil
     elsif @input.to_i > 0 && @input.to_i < 51
-      self.destination_details
-      self.start
+      destination_details
+      start
       return nil
     elsif @input.downcase == "exit" 
       exit
     elsif @input == "?"
-      self.menu
-      self.start
+      menu
+      start
       return nil
     else 
       puts "I didn't understand that."
-      self.menu
-      self.start
+      menu
+      start
       return nil
     end
   end
   
-  def self.menu 
+  def menu 
     puts "for more information on a destination, type the destination number"
     puts "to see the next 5 destinations, type next"
     puts "to see the previous 5 destinations, type back"
@@ -66,23 +69,23 @@ class Gtfo::CLI
     puts "or else type exit" 
   end
   
-  def self.print
-    self.all[@@navigation..@@navigation + 4].each.with_index(@@navigation + 1) {|d, i| puts "#{i}. #{d.name}"}
+  def print
+    Gtfo::Destination.all[@@navigation..@@navigation + 4].each.with_index(@@navigation + 1) {|d, i| puts "#{i}. #{d.name}"}
     puts "for menu options, type ?"
   end
   
-  def self.destination_details 
+  def destination_details 
     index = @input.to_i - 1 
-    destination = self.all[index]
+    destination = Gtfo::Destination.all[index]
     puts destination.name 
     puts destination.description
     puts "for menu options, type ?"
   end
   
-  def self.gtfo 
+  def gtfo 
     r = Random.new 
     index = r.rand(0..49)
-    destination = self.all[index]
+    destination = Gtfo::Destination.all[index]
     puts destination.name 
     puts destination.description
     puts "for menu options, type ?"
