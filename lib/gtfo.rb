@@ -12,6 +12,7 @@ module Gtfo
     
     def initialize 
       @@all << self
+      @input = nil
     end
     
     def self.all 
@@ -46,29 +47,29 @@ module Gtfo
     end
     
     def self.start
-      input = gets.strip
-      if input.downcase == "top"
+      @input = gets.strip
+      if @input.downcase == "top"
         @@navigation == 0 
         self.print
-      elsif input.downcase == "next" 
+      elsif @input.downcase == "next" 
         @@navigation += 5 unless @@navigation >= 44 
         self.print
         puts "for menu options, type ?"
         self.start
-      elsif input.downcase == "back"
+      elsif @input.downcase == "back"
         @@navigation -= 5 unless @@navigation <= 0
         self.print 
         puts "for menu options, type ?"
         self.start
-      elsif input.downcase == "gtfo"
+      elsif @input.downcase == "gtfo"
         puts "for menu options, type ?"
         self.start
-      elsif input.to_i > 0 && input.to_i < 51
+      elsif @input.to_i > 0 && @input.to_i < 51
         self.destination_details
         self.start
-      elsif input.downcase == "exit" 
+      elsif @input.downcase == "exit" 
         exit
-      elsif input == "?"
+      elsif @input == "?"
         self.menu
       else 
         puts "I didn't understand that."
@@ -90,7 +91,10 @@ module Gtfo
     end
     
     def self.destination_details 
-      
+      index = @input.to_i - 1 
+      destination = self.all[index]
+      puts destination.name 
+      puts destination.description
     end
     
     binding.pry
