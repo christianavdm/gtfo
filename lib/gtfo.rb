@@ -106,6 +106,15 @@ module Gtfo
       puts "for menu options, type ?"
     end
     
+    def self.gtfo 
+      r = Random.new 
+      index = r.rand(0..49)
+      destination = self.all[index]
+      puts destination.name 
+      puts destination.description
+      puts "for menu options, type ?"
+    end
+    
     binding.pry
   end
 end
