@@ -114,25 +114,25 @@ class Gtfo::CLI
   def destination_details 
     index = @input.to_i - 1 
     destination = Gtfo::Destination.all[index]
-    puts ""
-    puts destination.name 
-    puts ""
-    puts destination.description
-    puts ""
-    puts ""
-    puts "for menu options, type ?"
-    puts ""
+    print_details(destination)
   end
   
   def gtfo 
     r = Random.new 
     index = r.rand(0..49)
     destination = Gtfo::Destination.all[index]
+    print_details(destination)
+  end
+  
+  def print_details(destination)
     puts ""
-    puts destination.name 
+    puts ""
+    puts "<<>><<>><<>><<>><<>> #{destination.name} <<>><<>><<>><<>><<>>"
+    puts ""
     puts ""
     puts destination.description
     puts ""
+    puts "<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>"
     puts ""
     puts "for menu options, type ?"
     puts ""
