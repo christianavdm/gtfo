@@ -92,14 +92,21 @@ class Gtfo::CLI
   end
   
   def menu 
+    puts ""
     puts "*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *"
-    puts "  gtfo => go to a randomly assigned destination"
-    puts "to go to the top 5 destinations, type go"
-    puts "for more information on a destination, type the destination number"
-    puts "to see the next 5 destinations, type next"
-    puts "to see the previous 5 destinations, type back"
-    puts "or else type exit" 
-    puts "* * * * * * * * * * * * * * * * * * * * * * * * * *"
+    puts "                Command Options"
+    puts "*                                               *"
+    puts "  gtfo => go to a randomly assigned destination "
+    puts "* go   => go to the top 5 destinations          *"
+    puts "  next => to see the next 5 destinations"
+    puts "* back => to see the previous 5 destinations    *"
+    puts ""
+    puts "*    for more information on a destination,     *"
+    puts "            type the destination number"
+    puts "*               or else type exit               *" 
+    puts ""
+    puts "*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *"
+    puts ""
   end
   
   def print
