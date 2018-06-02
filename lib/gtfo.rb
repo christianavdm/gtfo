@@ -43,7 +43,7 @@ module Gtfo
       puts "to go to a randomly assigned destination, type gtfo"
       puts "to see the top 5 travel destinations, type top" 
       self.destinations_from_page
-      self.start
+    #  self.start
     end
     
     def self.start
@@ -51,38 +51,39 @@ module Gtfo
       if @input.downcase == "top"
         @@navigation = 0 
         self.print
-    #    return nil
+        self.start
+        return nil
       elsif @input.downcase == "next" 
         @@navigation += 5 unless @@navigation >= 44
         self.print
         puts "for menu options, type ?"
         self.start
-    #    return nil
+        return nil
       elsif @input.downcase == "back"
         @@navigation -= 5 unless @@navigation <= 0
         self.print 
         puts "for menu options, type ?"
         self.start
-    #    return nil
+        return nil
       elsif @input.downcase == "gtfo"
         puts "for menu options, type ?"
         self.start
-    #    return nil
+        return nil
       elsif @input.to_i > 0 && @input.to_i < 51
         self.destination_details
         self.start
-     #   return nil
+        return nil
       elsif @input.downcase == "exit" 
         exit
       elsif @input == "?"
         self.menu
         self.start
-      #  return nil
+        return nil
       else 
         puts "I didn't understand that."
         self.menu
         self.start
-      #  return nil
+        return nil
       end
     end
     
