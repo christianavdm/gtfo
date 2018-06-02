@@ -1,4 +1,15 @@
 class Gtfo::CLI 
+  
+  def initialize 
+    @input = nil
+  end
+  
+  @@navigation = 0
+  
+  def self.navigation 
+    @@navigation 
+  end
+  
   def self.call 
     puts "time to gtfo"
     puts "to go to a randomly assigned destination, type gtfo"
