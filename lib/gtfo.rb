@@ -49,32 +49,40 @@ module Gtfo
     def self.start
       @input = gets.strip
       if @input.downcase == "top"
-        @@navigation == 0 
+        @@navigation = 0 
         self.print
+    #    return nil
       elsif @input.downcase == "next" 
-        @@navigation += 5 unless @@navigation >= 44 
+        @@navigation += 5 unless @@navigation >= 44
         self.print
         puts "for menu options, type ?"
         self.start
+    #    return nil
       elsif @input.downcase == "back"
         @@navigation -= 5 unless @@navigation <= 0
         self.print 
         puts "for menu options, type ?"
         self.start
+    #    return nil
       elsif @input.downcase == "gtfo"
         puts "for menu options, type ?"
         self.start
+    #    return nil
       elsif @input.to_i > 0 && @input.to_i < 51
         self.destination_details
         self.start
+     #   return nil
       elsif @input.downcase == "exit" 
         exit
       elsif @input == "?"
         self.menu
+        self.start
+      #  return nil
       else 
         puts "I didn't understand that."
         self.menu
         self.start
+      #  return nil
       end
     end
     
