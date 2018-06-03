@@ -1,8 +1,6 @@
 # Gtfo
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/gtfo`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to gtfo! Sometimes, you know you need to travel, but you don't know (or care) where. Use gtfo to find your next travel adventure. 
 
 ## Installation
 
@@ -22,7 +20,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+You can use a list view by typing go to see the top 5 travel destinations for 2018 according to Travel and Leisure. Type next and/or back to view other destinations. 
+
+For more details on any destination, type the number of the destination. 
+
+If you're feeling particularly adventurous, type gtfo to travel to a randomly selected destination. 
+
+If you get lost, type ? to find a menu. 
 
 ## Development
 
