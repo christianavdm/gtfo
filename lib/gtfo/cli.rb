@@ -4,6 +4,7 @@ class Gtfo::CLI
   
   def initialize 
     @input = nil
+    @max = nil
   end
   
   def self.navigation 
@@ -45,18 +46,19 @@ class Gtfo::CLI
     puts "       to see the top 5 travel destinations, type go" 
     puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     puts " "
+    Gtfo::Destination.new.destinations_from_page 
     start
   end
   
   def start
-    Gtfo::Destination.new.destinations_from_page
     @input = gets.strip
+    @max = Gtfo::Destination.all.count
     if @input.downcase == "go"
       @@navigation = 0 
       print
       start
     elsif @input.downcase == "next" 
-      @@navigation += 5 unless @@navigation >= 44
+      @@navigation += 5 unless @@navigation >= (@max - 5)
       print
       start
     elsif @input.downcase == "back"
@@ -66,7 +68,7 @@ class Gtfo::CLI
     elsif @input.downcase == "gtfo"
       gtfo
       start
-    elsif @input.to_i > 0 && @input.to_i < 51
+    elsif @input.to_i > 0 && @input.to_i <= @max
       destination_details
       start
     elsif @input.downcase == "exit" 
