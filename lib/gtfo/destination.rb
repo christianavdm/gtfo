@@ -12,14 +12,9 @@ class Gtfo::Destination
     
     doc.css(".media-body").each do |destination|
       new_destination = Gtfo::Destination.new 
-      @@all << new_destination
       new_destination.name = destination.css("h2").text.strip
       new_destination.description = destination.css("p").text
-      if new_destination.name == "The 50 Best Places to Travel in 2018"
-        Gtfo::Destination.all.delete(new_destination)
-      elsif new_destination.name == ""
-        Gtfo::Destination.all.delete(new_destination)
-      end
+      @@all << new_destination unless new_destination.name == "The 50 Best Places to Travel in 2018" || new_destination.name == ""
     end
   end
 end
