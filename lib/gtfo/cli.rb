@@ -1,14 +1,13 @@
 class Gtfo::CLI 
   
-  @@navigation = 0 
-  
   def initialize 
     @input = nil
     @max = nil
+    @navigation = 0
   end
   
   def self.navigation 
-    @@navigation 
+    @navigation 
   end
   
   def call 
@@ -54,15 +53,15 @@ class Gtfo::CLI
     @input = gets.strip
     @max = Gtfo::Destination.all.count
     if @input.downcase == "go"
-      @@navigation = 0 
+      @navigation = 0 
       print
       start
     elsif @input.downcase == "next" 
-      @@navigation += 5 unless @@navigation >= (@max - 5)
+      @navigation += 5 unless @navigation >= (@max - 5)
       print
       start
     elsif @input.downcase == "back"
-      @@navigation -= 5 unless @@navigation <= 0
+      @navigation -= 5 unless @navigation <= 0
       print 
       start
     elsif @input.downcase == "gtfo"
@@ -106,7 +105,7 @@ class Gtfo::CLI
     puts " "
     puts "* * * * * Now Boarding * * * * * "
     puts " "
-    Gtfo::Destination.all[@@navigation..@@navigation + 4].each.with_index(@@navigation + 1) {|d, i| puts "  #{i}. #{d.name}"}
+    Gtfo::Destination.all[@navigation..@navigation + 4].each.with_index(@navigation + 1) {|d, i| puts "  #{i}. #{d.name}"}
     puts " "
     puts " "
     puts "for menu options, type ?"
