@@ -12,7 +12,7 @@ class Gtfo::Destination
   end
   
   def destinations_from_page
-    doc = Nokogiri::HTML(open("http://www.travelandleisure.com/trip-ideas/best-places-to-travel-in-2018"))
+    doc = Nokogiri::HTML(open("https://www.travelandleisure.com/trip-ideas/best-places-to-travel-in-2018"))
     
     doc.css(".media-body").each do |destination|
       new_destination = Gtfo::Destination.new 
